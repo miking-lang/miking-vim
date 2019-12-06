@@ -6,14 +6,14 @@
 " Last Change:  2019 Dec 5 - First version
 
 " quit when a syntax file was already loaded
-if exists("b:current_syntax") && b:current_syntax == "mc"
+if exists("b:current_syntax")
   finish
 endif
 
 " MCore is case sensitive.
 syn case match
 
-" Highlighting
+" Keywords
 syntax keyword mcoreKeyword
       \ Lam
       \ con
@@ -35,34 +35,25 @@ syntax keyword mcoreKeyword
       \ utest
       \ with
 
-
 syntax keyword mcoreBooleans
       \ false
       \ true
-
-"syntax keyword mcorePrimitives
-
-"syntax keyword mcoreOperators
 
 syntax keyword mcoreWarning
       \ mexpr
       \ include
 
+" Types
+syntax match mcoreType /\<\u\w*\>/
+
+" Comments
+syntax match mcoreComment /^\/\/.*/
+syntax match mcoreComment /^--.*/
+
+" Highlight colors
 highlight link mcoreKeyword Keyword
 highlight link mcoreBooleans Boolean
-"highlight link mcorePrimitives Ignore
-"highlight link mcoreOperators Ignore
 highlight link mcoreWarning Special
+highlight link mcoreType Type
+highlight link mcoreComment Comment
 
-" TODO Types
-" (setq mcore-types-regexp "\\<[[:upper:]][[:word:]]*\\>")
-
-" TODO Comments
-" (setq mcore-mode-syntax-table
-"      (let ( (synTable (make-syntax-table)))
-"        ;; Inline comment “// ...”
-"        ;; Inline comment “-- ...”
-"        (modify-syntax-entry ?/ ". 12a" synTable)
-"        (modify-syntax-entry ?- "_ 123" synTable)
-"        (modify-syntax-entry ?\n ">" synTable)
-"        synTable))
