@@ -35,13 +35,18 @@ syntax keyword mcoreKeyword
       \ utest
       \ with
 
+" Booleans
 syntax keyword mcoreBooleans
       \ false
       \ true
 
+" Special
 syntax keyword mcoreWarning
       \ mexpr
       \ include
+
+" Strings
+syntax region mcoreString start=/"/ skip=/\\"/ end=/"/
 
 " Types
 syntax match mcoreType /\<\u\w*\>/
@@ -53,7 +58,7 @@ syntax match mcoreComment /--.*/
 " Highlight colors
 highlight link mcoreKeyword Keyword
 highlight link mcoreBooleans Boolean
+highlight link mcoreString String
 highlight link mcoreWarning Special
 highlight link mcoreType Type
 highlight link mcoreComment Comment
-
