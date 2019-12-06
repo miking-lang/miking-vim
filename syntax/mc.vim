@@ -47,8 +47,8 @@ syntax keyword mcoreWarning
 syntax match mcoreType /\<\u\w*\>/
 
 " Comments
-syntax match mcoreComment /^\/\/.*/
-syntax match mcoreComment /^--.*/
+syntax match mcoreComment /\/\/.*/
+syntax match mcoreComment /--.*/
 
 " Highlight colors
 highlight link mcoreKeyword Keyword
