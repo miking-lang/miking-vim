@@ -51,9 +51,13 @@ syntax region mcoreString start=/"/ skip=/\\"/ end=/"/
 " Types
 syntax match mcoreType /\<\u\w*\>/
 
+" TODOs from vim.vim
+syn keyword mcoreTodo contained COMBAK FIXME TODO XXX
+
 " Comments
-syntax match mcoreComment /\/\/.*/
-syntax match mcoreComment /--.*/
+syntax match mcoreComment /\/\/.*/ contains=mcoreTodo
+syntax match mcoreComment /--.*/ contains=mcoreTodo
+
 
 " Highlight colors
 highlight link mcoreKeyword Keyword
@@ -62,3 +66,4 @@ highlight link mcoreString String
 highlight link mcoreWarning Special
 highlight link mcoreType Type
 highlight link mcoreComment Comment
+highlight link mcoreTodo Todo
