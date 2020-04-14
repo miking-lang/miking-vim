@@ -48,6 +48,9 @@ syntax keyword mcoreWarning
 " Strings
 syntax region mcoreString start=/"/ skip=/\\"/ end=/"/
 
+" Chars (Implemented similarly to strings for now TODO Fix)
+syntax region mcoreChar start=/'/ end=/'/
+
 " Types
 syntax match mcoreType /\<\u\w*\>/
 
@@ -63,6 +66,7 @@ syntax match mcoreComment /--.*/ contains=mcoreTodo
 highlight link mcoreKeyword Keyword
 highlight link mcoreBooleans Boolean
 highlight link mcoreString String
+highlight link mcoreChar Character
 highlight link mcoreWarning Special
 highlight link mcoreType Type
 highlight link mcoreComment Comment
