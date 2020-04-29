@@ -1,6 +1,6 @@
 " Vim syntax file
-" Language:	MCore
-" Maintainer:	Daniel Lundén <dlunde@kth.se>
+" Language:     MCore
+" Maintainer:   Daniel Lundén <dlunde@kth.se>
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -45,13 +45,20 @@ syntax keyword mcoreWarning
 " Strings
 syntax region mcoreString start=/"/ skip=/\\"/ end=/"/
 
-" Chars (Implemented similarly to strings for now TODO Fix)
-syntax region mcoreChar start=/'/ end=/'/
+" Chars, taken from default syntax/c.vim
+syntax match cSpecial display contained "\\\(x\x\+\|\o\{1,3}\|.\|$\)"
+syntax match cCharacter "L\='[^\\]'"
+syntax match cCharacter "L'[^']*'" contains=cSpecial
+syntax match cSpecialError   "L\='\\[^'\"?\\abfnrtv]'"
+syntax match cSpecialCharacter "L\='\\['\"?\\abfnrtv]'"
+syntax match cSpecialCharacter display "L\='\\\o\{1,3}'"
+syntax match cSpecialCharacter display "'\\x\x\{1,2}'"
+syntax match cSpecialCharacter display "L'\\x\x\+'"
 
 " Types
 syntax match mcoreType /\<\u\w*\>/
 
-" TODOs from vim.vim
+" TODOs from syntax/vim.vim
 syn keyword mcoreTodo contained COMBAK FIXME TODO XXX
 
 " Comments
@@ -63,8 +70,13 @@ syntax match mcoreComment /--.*/ contains=mcoreTodo
 highlight link mcoreKeyword Keyword
 highlight link mcoreBooleans Boolean
 highlight link mcoreString String
-highlight link mcoreChar Character
 highlight link mcoreWarning Special
 highlight link mcoreType Type
 highlight link mcoreComment Comment
 highlight link mcoreTodo Todo
+
+highlight link cSpecial SpecialChar
+highlight link cCharacter Character
+highlight link cSpecialError Error
+highlight link cSpecialCharacter cSpecial
+
