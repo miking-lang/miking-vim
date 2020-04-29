@@ -1,7 +1,6 @@
 " Vim syntax file
 " Language:	MCore
 " Maintainer:	Daniel Lundén <dlunde@kth.se>
-" Last Change:	2019-12-05
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
