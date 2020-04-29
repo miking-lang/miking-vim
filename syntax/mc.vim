@@ -1,11 +1,9 @@
 " Vim syntax file
-" Language:     MCore
-" Filenames:    *.mc
-" Maintainers:  Daniel Lundén     <dlunde@kth.se>
-" URL:          https://github.com/miking-lang/miking
-" Last Change:  2019 Dec 5 - First version
+" Language:	MCore
+" Maintainer:	Daniel Lundén <dlunde@kth.se>
+" Last Change:	2019-12-05
 
-" quit when a syntax file was already loaded
+" Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
   finish
 endif
