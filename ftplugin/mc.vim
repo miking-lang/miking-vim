@@ -16,4 +16,4 @@ let b:did_ftplugin = 1
 setlocal fo-=t fo+=croql
 
 " Define comments
-setlocal comments=:--,://
+setlocal comments=:--,s:*-,mb:*,ex:-*
