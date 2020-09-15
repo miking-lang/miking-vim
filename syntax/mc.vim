@@ -31,6 +31,7 @@ syntax keyword mcoreKeyword
       \ use
       \ utest
       \ with
+      \ using
 
 " Booleans
 syntax keyword mcoreBooleans
