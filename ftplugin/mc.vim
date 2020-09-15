@@ -17,3 +17,6 @@ setlocal fo-=t fo+=croql
 
 " Define comments
 setlocal comments=:--,s:*-,mb:*,ex:-*
+
+" Used in vim-commentary
+setlocal commentstring=--%s
