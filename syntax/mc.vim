@@ -64,8 +64,8 @@ syntax keyword mcoreTodo contained COMBAK FIXME TODO XXX
 
 " Comments
 syntax match mcoreComment /--.*/ contains=mcoreTodo
-syntax region mcoreBlockComment start="\*-" end="-\*" contains=mcoreTodo
-
+syntax region mcoreBlockComment start="\*-" end="-\*"
+      \ contains=mcoreTodo,mcoreBlockComment
 
 " Highlight colors
 highlight link mcoreKeyword Keyword
