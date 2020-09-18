@@ -60,11 +60,11 @@ syntax match cSpecialCharacter display "L'\\x\x\+'"
 syntax match mcoreType /\<\u\w*\>/
 
 " TODOs from syntax/vim.vim
-syntax keyword mcoreTodo contained COMBAK FIXME TODO XXX
+syntax keyword mcoreTodo contained TODO NOTE
 
 " Comments
 syntax match mcoreComment /--.*/ contains=mcoreTodo
-syntax region mcoreBlockComment start="\*-" end="-\*"
+syntax region mcoreBlockComment start="/-" end="-/"
       \ contains=mcoreTodo,mcoreBlockComment
 
 " Highlight colors
