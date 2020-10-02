@@ -43,15 +43,14 @@ syntax keyword mcoreWarning
       \ mexpr
       \ include
 
-" Strings
-syntax region mcoreString start=/"/ skip=/\\"/ end=/"/
 
-" Chars, taken from default syntax/c.vim
+" Strings and chars (adapted from syntax/c.vim)
 syntax match cSpecial display contained "\\\(x\x\+\|\o\{1,3}\|.\|$\)"
+syntax region cString start=+\(L\|u\|u8\|U\|R\|LR\|u8R\|uR\|UR\)\="+ skip=+\\\\\|\\"+ end=+"+ contains=cSpecial,@Spell extend
 syntax match cCharacter "L\='[^\\]'"
 syntax match cCharacter "L'[^']*'" contains=cSpecial
-syntax match cSpecialError   "L\='\\[^'\"?\\abfnrtv]'"
-syntax match cSpecialCharacter "L\='\\['\"?\\abfnrtv]'"
+syntax match cSpecialError "L\='\\[^'\"?\\abefnrtv]'"
+syntax match cSpecialCharacter "L\='\\['\"?\\abefnrtv]'"
 syntax match cSpecialCharacter display "L\='\\\o\{1,3}'"
 syntax match cSpecialCharacter display "'\\x\x\{1,2}'"
 syntax match cSpecialCharacter display "L'\\x\x\+'"
@@ -70,7 +69,6 @@ syntax region mcoreBlockComment start="/-" end="-/"
 " Highlight colors
 highlight link mcoreKeyword Keyword
 highlight link mcoreBooleans Boolean
-highlight link mcoreString String
 highlight link mcoreWarning Special
 highlight link mcoreType Type
 highlight link mcoreComment Comment
@@ -79,6 +77,7 @@ highlight link mcoreTodo Todo
 
 highlight link cSpecial SpecialChar
 highlight link cCharacter Character
+highlight link cString String
 highlight link cSpecialError Error
 highlight link cSpecialCharacter cSpecial
 
