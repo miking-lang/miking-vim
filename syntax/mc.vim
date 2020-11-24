@@ -59,7 +59,7 @@ syntax match cSpecialCharacter display "L'\\x\x\+'"
 syntax match mcoreType /\<\u\w*\>/
 
 " TODOs from syntax/vim.vim
-syntax keyword mcoreTodo contained TODO NOTE
+syntax keyword mcoreTodo contained TODO NOTE OPT
 
 " Comments
 syntax match mcoreComment /--.*/ contains=mcoreTodo
