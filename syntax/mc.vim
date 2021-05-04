@@ -12,7 +12,6 @@ syn case match
 
 " Keywords
 syntax keyword mcoreKeyword
-      \ Lam
       \ con
       \ else
       \ end
@@ -32,6 +31,7 @@ syntax keyword mcoreKeyword
       \ utest
       \ with
       \ using
+      \ external
 
 " Booleans
 syntax keyword mcoreBooleans
