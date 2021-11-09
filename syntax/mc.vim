@@ -32,6 +32,9 @@ syntax keyword mcoreKeyword
       \ with
       \ using
       \ external
+      \ hole
+      \ switch
+      \ case
 
 " Booleans
 syntax keyword mcoreBooleans
