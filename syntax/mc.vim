@@ -84,3 +84,5 @@ highlight link cString String
 highlight link cSpecialError Error
 highlight link cSpecialCharacter cSpecial
 
+" Avoid syncing issues with multiline strings
+syntax sync minlines=2000
